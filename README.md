@@ -46,4 +46,4 @@ https://stackmindlab.github.io/project-blue-hour/
 
 ---
 
-Created by Yesi as part of her web development learning journey.
+Created by Irma as part of her web development learning journey.
