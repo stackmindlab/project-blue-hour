@@ -1,6 +1,6 @@
 # Project Blue Hour 🌙
 
-Project Blue Hour is a responsive single-page website built with HTML, CSS, and JavaScript.
+Project Blue Hour is a responsive single page website built with HTML, CSS, and JavaScript.
 
 This project was created to practice front-end web development concepts including responsive design, JavaScript event handling, DOM manipulation, animations, image integration, navigation systems, and GitHub Pages deployment.
 
@@ -46,4 +46,4 @@ https://stackmindlab.github.io/project-blue-hour/
 
 ---
 
-Created by Irma as part of her web development learning journey.
+Created by Irma as part of my web development learning journey.
