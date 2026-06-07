@@ -1,35 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Basic meta setup for encoding and responsiveness -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Browser tab title -->
     <title>Project Blue Hour 🌙</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
+    <!-- ============================= -->
+    <!-- Background Animation Layer   -->
+    <!-- Floating decorative emojis   -->
+    <!-- Controlled via CSS animations -->
+    <!-- ============================= -->
     <div class="background-animation">
-        <span>🎈</span>
-        <span>✨</span>
-        <span>🎊</span>
-        <span>🌙</span>
-        <span>💙</span>
-        <span>🎈</span>
-        <span>✨</span>
+      <span>🎈</span>
+      <span>✨</span>
+      <span>🎊</span>
+      <span>🌙</span>
+      <span>💙</span>
+      <span>🎈</span>
+      <span>✨</span>
     </div>
 
+    <!-- ============================= -->
+    <!-- Welcome Screen               -->
+    <!-- First view shown to the user -->
+    <!-- ============================= -->
     <section class="welcome">
-        <h1>Project Blue Hour 🌙</h1>
+      <!-- Main title -->
+      <h1>Project Blue Hour 🌙</h1>
 
-        <p>
-            Una pequeña sorpresa de cumpleaños hecha con amor,
-            recuerdos, música y unas palabras desde el corazón.
-        </p>
+      <!-- Intro message -->
+      <p>
+        Una pequeña sorpresa de cumpleaños hecha con amor, recuerdos, música y
+        unas palabras desde el corazón.
+      </p>
 
-        <button id="enterBtn">Entrar</button>
+      <!-- 
+        Entry button:
+        - Triggered via JavaScript
+        - Likely starts the main experience or reveals new content
+        -->
+      <button id="enterBtn">Entrar</button>
     </section>
 
+    <!-- JavaScript file (handles interactivity) -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
