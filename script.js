@@ -1,13 +1,36 @@
+/* ============================= */
+/* Initial Setup                 */
+/* Connect button from HTML      */
+/* ============================= */
 const enterBtn = document.getElementById("enterBtn");
 
+/*
+Add click event to start experience.
+Triggers first transition (welcome -> message)
+*/
 enterBtn.addEventListener("click", showMessage);
 
+/* ============================= */
+/* Navigation Functions          */
+/* ============================= */
+
+/*
+Reloads the page completely.
+Used to reset the experience to the beginning.
+*/
 function showHome() {
-    location.reload();
+  location.reload();
 }
 
+/* ============================= */
+/* Screen 1: Intro Message       */
+/* ============================= */
 function showMessage() {
-    document.querySelector(".welcome").innerHTML = `
+  /*
+    Replace entire content of .welcome section.
+    This acts like switching to a new "page"
+    */
+  document.querySelector(".welcome").innerHTML = `
         <h1>💌 Feliz Cumpleaños</h1>
 
         <p>
@@ -16,15 +39,24 @@ function showMessage() {
             y algunos detalles que me hicieron pensar en ti.
         </p>
 
+        <!-- Navigation buttons -->
         <button onclick="showHome()" class="back-btn">⬅ Inicio</button>
         <button id="continueBtn">Continuar ✨</button>
     `;
 
-    document.getElementById("continueBtn").addEventListener("click", showPhoto1);
+  /*
+    IMPORTANT:
+    Since we just replaced the HTML,
+    we MUST re-select and re-attach events.
+    */
+  document.getElementById("continueBtn").addEventListener("click", showPhoto1);
 }
 
+/* ============================= */
+/* Screen 2: Memory #1           */
+/* ============================= */
 function showPhoto1() {
-    document.querySelector(".welcome").innerHTML = `
+  document.querySelector(".welcome").innerHTML = `
         <h1>🎮 Recuerdo #1</h1>
 
         <img src="images/photo1.jpeg" class="memory-photo">
@@ -39,11 +71,14 @@ function showPhoto1() {
         <button id="next1">Continuar ➜</button>
     `;
 
-    document.getElementById("next1").addEventListener("click", showPhoto2);
+  document.getElementById("next1").addEventListener("click", showPhoto2);
 }
 
+/* ============================= */
+/* Screen 3: Memory #2           */
+/* ============================= */
 function showPhoto2() {
-    document.querySelector(".welcome").innerHTML = `
+  document.querySelector(".welcome").innerHTML = `
         <h1>🎯 Recuerdo #2</h1>
 
         <img src="images/photo2.jpeg" class="memory-photo">
@@ -59,11 +94,14 @@ function showPhoto2() {
         <button id="next2">Continuar ➜</button>
     `;
 
-    document.getElementById("next2").addEventListener("click", showPhoto3);
+  document.getElementById("next2").addEventListener("click", showPhoto3);
 }
 
+/* ============================= */
+/* Screen 4: Memory #3           */
+/* ============================= */
 function showPhoto3() {
-    document.querySelector(".welcome").innerHTML = `
+  document.querySelector(".welcome").innerHTML = `
         <h1>👍 Recuerdo #3</h1>
 
         <img src="images/photo3.jpeg" class="memory-photo">
@@ -79,11 +117,14 @@ function showPhoto3() {
         <button id="musicBtn">Ir a la Música 🎵</button>
     `;
 
-    document.getElementById("musicBtn").addEventListener("click", showMusic);
+  document.getElementById("musicBtn").addEventListener("click", showMusic);
 }
 
+/* ============================= */
+/* Screen 5: Music Section       */
+/* ============================= */
 function showMusic() {
-    document.querySelector(".welcome").innerHTML = `
+  document.querySelector(".welcome").innerHTML = `
         <h1>🎵 Música</h1>
 
         <p>
@@ -108,11 +149,14 @@ function showMusic() {
         <button id="finalBtn">Final 🌙</button>
     `;
 
-    document.getElementById("finalBtn").addEventListener("click", showFinal);
+  document.getElementById("finalBtn").addEventListener("click", showFinal);
 }
 
+/* ============================= */
+/* Final Screen                  */
+/* ============================= */
 function showFinal() {
-    document.querySelector(".welcome").innerHTML = `
+  document.querySelector(".welcome").innerHTML = `
         <h1>🎂 Feliz Cumpleaños</h1>
 
         <p>
@@ -127,8 +171,8 @@ function showFinal() {
         </p>
 
         <p>
-            Que este nuevo año de vida te regale cosas buenas. Te mando un fuerte abrazo en este dia, bendiciones. 
-            🌙💙
+            Que este nuevo año de vida te regale cosas buenas. 
+            Te mando un fuerte abrazo en este dia, bendiciones. 🌙💙
         </p>
 
         <button onclick="showMusic()" class="back-btn">⬅ Atrás</button>
