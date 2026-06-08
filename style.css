@@ -1,244 +1,316 @@
+/* ============================= */
+/* Global Reset & Base Styles    */
+/* Removes default spacing and   */
+/* ensures consistent box sizing */
+/* ============================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* ============================= */
+/* Body Layout & Page Styling    */
+/* Centering content + main theme */
+/* ============================= */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, #081229, #13294b, #2a1f52);
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow-x: hidden;
+  font-family: Arial, sans-serif;
+
+  /* Dark gradient "Blue Hour" theme */
+  background: linear-gradient(180deg, #081229, #13294b, #2a1f52);
+  color: white;
+
+  min-height: 100vh;
+
+  /* Center content vertically + horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  /* Prevent horizontal scrolling from animations */
+  overflow-x: hidden;
+
+  /* Added spacing for mobile breathing room */
+  padding: 20px;
 }
 
+/* ============================= */
+/* Welcome Section Layout        */
+/* Main container for content    */
+/* ============================= */
 .welcome {
-    max-width: 700px;
-    padding: 30px;
+  width: 100%;
+  max-width: 750px;
+  padding: 30px;
 }
 
+/* ============================= */
+/* Typography                    */
+/* ============================= */
 h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
+/* ============================= */
+/* Buttons                       */
+/* Reusable styling for actions  */
+/* ============================= */
 button {
-    margin-top: 25px;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1rem;
+  margin-top: 25px;
+  padding: 12px 30px;
+
+  border: none;
+  border-radius: 30px;
+
+  cursor: pointer;
+  font-size: 1rem;
+
+  /* Smooth hover animation */
+  transition: transform 0.2s ease;
 }
 
 button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
+/* Back button spacing (if used later) */
 .back-btn {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
+/* ============================= */
+/* Background Animation Layer    */
+/* Floating emoji effect         */
+/* ============================= */
 .background-animation {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  /* Sends it behind all content */
+  z-index: -1;
 }
 
 .background-animation span {
-    position: absolute;
-    bottom: -50px;
-    font-size: 2rem;
-    animation: floatUp 12s linear infinite;
-    opacity: 0.7;
+  position: absolute;
+
+  /* Starts below screen */
+  bottom: -50px;
+
+  font-size: 2rem;
+
+  /* Infinite vertical floating animation */
+  animation: floatUp 12s linear infinite;
+
+  opacity: 0.7;
 }
 
+/* Individual positions & timing for variation */
 .background-animation span:nth-child(1) {
-    left: 10%;
-    animation-delay: 0s;
+  left: 10%;
+  animation-delay: 0s;
 }
 
 .background-animation span:nth-child(2) {
-    left: 25%;
-    animation-delay: 2s;
+  left: 25%;
+  animation-delay: 2s;
 }
 
 .background-animation span:nth-child(3) {
-    left: 40%;
-    animation-delay: 4s;
+  left: 40%;
+  animation-delay: 4s;
 }
 
 .background-animation span:nth-child(4) {
-    left: 55%;
-    animation-delay: 1s;
+  left: 55%;
+  animation-delay: 1s;
 }
 
 .background-animation span:nth-child(5) {
-    left: 70%;
-    animation-delay: 3s;
+  left: 70%;
+  animation-delay: 3s;
 }
 
 .background-animation span:nth-child(6) {
-    left: 85%;
-    animation-delay: 5s;
+  left: 85%;
+  animation-delay: 5s;
 }
 
 .background-animation span:nth-child(7) {
-    left: 95%;
-    animation-delay: 6s;
+  left: 95%;
+  animation-delay: 6s;
 }
 
+/* ============================= */
+/* Floating Animation Keyframes  */
+/* Moves elements upward + fades */
+/* ============================= */
 @keyframes floatUp {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
 
-    20% {
-        opacity: 0.8;
-    }
+  /* Fade in early for smooth effect */
+  20% {
+    opacity: 0.8;
+  }
 
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
+  /* Move above viewport */
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
+/* ============================= */
+/* Memory Photo Component        */
+/* Used for displaying images    */
+/* ============================= */
 .memory-photo {
-    width: 100%;
-    max-width: 500px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(255,255,255,.25);
-    transition: .4s;
+  width: 100%;
+  max-width: 500px;
+
+  margin: 20px 0;
+
+  border-radius: 20px;
+
+  /* Soft glowing effect */
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+
+  transition: 0.4s ease;
 }
 
 .memory-photo:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
+/* ============================= */
+/* Music List Component          */
+/* Links styled as UI elements   */
+/* ============================= */
 .music-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin: 25px 0;
 }
 
 .music-list a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.15);
-    transition: 0.3s;
+  color: white;
+  text-decoration: none;
+
+  padding: 14px 20px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  transition: 0.3s ease;
 }
 
 .music-list a:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.03);
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2.2rem;
-    }
+/* ============================= */
+/* General Enhancements          */
+/* ============================= */
 
-    p {
-        font-size: 1rem;
-    }
-
-    .welcome {
-        padding: 20px;
-    }
-}
-
-/* Mobile + tablet + desktop polish */
-
+/* Smooth scroll behavior */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-body {
-    padding: 20px;
-}
-
-.welcome {
-    width: 100%;
-    max-width: 750px;
-}
-
+/* Remove tap highlight on mobile */
 button,
 .music-list a {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* iPhone / small phones */
+/* ============================= */
+/* Responsive Design             */
+/* Mobile-first improvements     */
+/* ============================= */
+
+/* Medium screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .welcome {
+    padding: 20px;
+  }
+}
+
+/* Small phones */
 @media (max-width: 480px) {
-    body {
-        padding: 16px;
-        align-items: center;
-    }
+  body {
+    padding: 16px;
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  button {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 15px;
+  }
 
-    button {
-        width: 100%;
-        max-width: 280px;
-        margin-top: 15px;
-    }
+  .back-btn {
+    margin-right: 0;
+  }
 
-    .back-btn {
-        margin-right: 0;
-    }
+  .memory-photo {
+    max-width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+  }
 
-    .memory-photo {
-        max-width: 100%;
-        max-height: 55vh;
-        object-fit: contain;
-    }
-
-    .music-list a {
-        font-size: 0.95rem;
-    }
+  .music-list a {
+    font-size: 0.95rem;
+  }
 }
 
-/* iPad / tablets */
+/* Tablets */
 @media (min-width: 481px) and (max-width: 900px) {
-    h1 {
-        font-size: 2.6rem;
-    }
+  h1 {
+    font-size: 2.6rem;
+  }
 
-    .memory-photo {
-        max-width: 90%;
-        max-height: 60vh;
-        object-fit: contain;
-    }
+  .memory-photo {
+    max-width: 90%;
+    max-height: 60vh;
+    object-fit: contain;
+  }
 }
 
 /* Large screens */
 @media (min-width: 901px) {
-    .memory-photo {
-        max-height: 65vh;
-        object-fit: contain;
-    }
+  .memory-photo {
+    max-height: 65vh;
+    object-fit: contain;
+  }
 }
